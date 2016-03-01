@@ -9,13 +9,13 @@ footprint=DIP16
 T 47300 48100 5 10 1 1 0 6 1
 refdes=U?
 }
-C 41700 47500 1 0 0 connector6-2.sym
+C 41700 45100 1 0 0 connector6-2.sym
 {
-T 42400 50400 5 10 1 1 0 6 1
+T 42400 48000 5 10 1 1 0 6 1
 refdes=CONN?
-T 42000 50350 5 10 0 0 0 0 1
+T 42000 47950 5 10 0 0 0 0 1
 device=CONNECTOR_6
-T 42000 50550 5 10 0 0 0 0 1
+T 42000 48150 5 10 0 0 0 0 1
 footprint=SIP6N
 }
 C 49300 47500 1 0 0 connector5-1.sym
