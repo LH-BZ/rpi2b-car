@@ -7,6 +7,34 @@ import RPi.GPIO as GPIO
 # instead of physical pin numbers
 GPIO.setmode(GPIO.BCM)
 
+class motor():
+    speed = 0
+    def __init__(self, pin1, pin2):
+        self.pin = [pin1, pin2]
+        GPIO.setup(self.pin[0], GPIO.OUT)
+        GPIO.setup(self.pin[1], GPIO.OUT)
+        self.pwm = [GPIO.PWM(self.pin[0], 100),
+                    GPIO.PWM(self.pin[1], 100)]
+
+    def start(self):
+        if self.speed > 0 :
+            self.pwm[0].start(self.speed)
+            self.pwm[1].start(0)
+        else:
+            self.pwm[0].start(0)
+            self.pwm[1].start(-self.speed)
+
+    def stop(self):
+        self.pwm[0].stop()
+        self.pwm[1].stop()
+            
+    def speed(self, spd):
+        self.speed = spd
+        self.start()
+        
+if __function__ ==  __main__:
+    
+
 # Define GPIO signals to use
 # Physical pins 12,16,18,22 -> GPIO[18,23,24,25]
 # [GPIO18:INT1, GPIO23:INT2, GPIO24:INT3, GPIO25:INT4]
